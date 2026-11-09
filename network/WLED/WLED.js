@@ -396,10 +396,8 @@ class WLEDBridge {
 
 			this.announced = true;
 
-			if(this.connected) {
-				DeviceState.Change(this.ip, this.defaultOn, this.defaultBri, false, true, true);
-			}
-
+			// Powering the device on is left to the device's Initialize(), which follows the
+			// "Turn WLED device ON on Startup" setting.
 			service.updateController(this);
 		}
 	}
